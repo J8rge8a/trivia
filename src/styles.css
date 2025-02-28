@@ -1,0 +1,227 @@
+/* src/styles.css */
+body {
+    margin: 0;
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  .app-container {
+    padding: 24px;
+    text-align: center;
+    min-height: 100vh;
+    background-color: #f5f7fa; /* Fondo gris claro pastel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 1.75rem; /* 28px */
+    font-weight: 500;
+    color: #212121; /* Negro suave (Material Design) */
+    margin-bottom: 8px;
+  }
+  
+  .subtitle {
+    font-size: 1rem; /* 16px */
+    font-weight: 400;
+    color: #424242; /* Gris muy oscuro */
+    margin-bottom: 24px;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 768px;
+    background-color: #ffffff; /* Blanco puro */
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra muy suave para un diseño plano */
+  }
+  
+  .question {
+    font-size: 1.75rem; /* 20px */
+    font-weight: 500;
+    color: #4d6bf3; /* Gris muy oscuro, casi negro */
+    margin-bottom: 16px;
+  }
+  
+  .players {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .player-name {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 500;
+    color: #212121; /* Negro suave */
+    margin-bottom: 12px;
+  }
+  
+  .option-button {
+    width: 100%;
+    padding: 10px 16px;
+    margin-bottom: 8px;
+    border: none; /* Sin borde para un diseño más plano */
+    border-radius: 8px;
+    background-color: #d6dfeb; /* Gris pastel más saturado */
+    color: #333333; /* Gris muy oscuro, casi negro */
+    font-size: 0.875rem; /* 14px */
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    cursor: pointer;
+    display: flex; /* Usamos flex para alinear el texto y el ícono */
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .option-button:hover:not(:disabled) {
+    background-color: #c7d1e3; /* Gris pastel un poco más oscuro */
+    transform: translateY(-1px); /* Efecto de elevación leve */
+  }
+  
+  .option-button.selected {
+    background-color: #f3b075; /* Naranja pastel */
+    color: #333333; /* Gris muy oscuro, casi negro */
+  }
+  
+  .option-button.correct {
+    background-color: #75e28e !important; /* Verde pastel con mayor precedencia */
+    color: #333333; /* Gris muy oscuro, casi negro */
+  }
+  
+  .option-button.incorrect {
+    background-color: #fa9842 !important; /* Naranja pastel con mayor precedencia */
+    color: #333333; /* Gris muy oscuro, casi negro */
+  }
+  
+  .option-button:disabled {
+    cursor: not-allowed;
+    background-color: #c4c9d4; /* Gris más oscuro para indicar que está deshabilitado */
+    color: #222222; /* Gris claro para el texto */
+  }
+  
+  .option-text {
+    flex: 1; /* El texto ocupa el espacio disponible */
+  }
+  
+  .icon {
+    display: inline-block; /* Aseguramos que el ícono sea visible */
+    font-size: 1.2rem; /* Tamaño más grande para que sea visible */
+    margin-left: 8px; /* Espacio entre el texto y el ícono */
+    line-height: 1; /* Alineación vertical */
+  }
+  
+  .icon.check {
+    color: #2e7d32; /* Verde oscuro para el check */
+  }
+  
+  .icon.cross {
+    color: #d32f2f; /* Rojo oscuro para la equis */
+  }
+  
+  .action-buttons {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+  
+  .action-button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #ffffff; /* Blanco puro para el texto de los botones de acción */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    cursor: pointer;
+  }
+  
+  .action-button.check {
+    background-color: #74a0ff; /* Azul pastel */
+  }
+  
+  .action-button.check:hover {
+    background-color: #6b94fa;
+    transform: translateY(-1px);
+  }
+  
+  .action-button.check:disabled {
+    background-color: #b8c9f5; /* Azul pastel más claro */
+    color: #d6deff;
+    cursor: not-allowed;
+  }
+  
+  .action-button.next {
+    background-color: #a787e4; /* Morado pastel */
+  }
+  
+  .action-button.next:hover {
+    background-color: #a481e0;
+    transform: translateY(-1px);
+  }
+  
+  .action-button.next:disabled {
+    background-color: #d6cce9; /* Morado pastel más claro */
+    color: #e2ddf5;
+    cursor: not-allowed;
+  }
+  
+  .winner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f5f7fa; /* Fondo gris claro pastel, completamente opaco */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+  }
+  
+  .winner-title {
+    font-size: 2.25rem; /* 36px */
+    font-weight: 500;
+    color: #212121; /* Negro suave */
+    margin-bottom: 8px;
+  }
+  
+  .winner-message {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #424242; /* Gris muy oscuro */
+    margin-bottom: 16px;
+  }
+  
+  .winner-button {
+    padding: 10px 24px;
+    background-color: #eb8080; /* Rojo pastel */
+    color: #333333; /* Gris muy oscuro, casi negro */
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    cursor: pointer;
+  }
+  
+  .winner-button:hover {
+    background-color: #ee7676;
+    transform: translateY(-1px);
+  }
+  
+  .winner-button:disabled {
+    background-color: #f8c8c8; /* Rojo pastel más claro */
+    color: #d1a3a3;
+    cursor: not-allowed;
+  }
